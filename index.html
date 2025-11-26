@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Air Quality & Behavioral Health Visualization Project</title>
-  <!-- Google Fonts for professional look -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset & body */
     * {
       margin: 0;
       padding: 0;
@@ -15,7 +16,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
+      background-color: #f4f6f8;
       color: #111827;
       display: flex;
       flex-direction: column;
@@ -24,11 +25,11 @@
 
     /* Header */
     header {
-      background-color: #2563eb;
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
       color: #fff;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     header h1 {
@@ -37,40 +38,51 @@
     }
 
     header p {
-      font-size: 1rem;
-      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      margin-top: 0.3rem;
+      color: #dbeafe;
       font-weight: 400;
-      color: #e0e7ff;
     }
 
-    /* Project & Team Details */
+    /* Project & Team Section */
     .project-details {
       background-color: #fff;
       max-width: 1000px;
-      margin: 1.5rem auto;
-      padding: 1.5rem 2rem;
+      margin: 2rem auto;
+      padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-details:hover {
+      transform: translateY(-5px);
     }
 
     .project-details h2 {
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #111827;
+      margin-bottom: 1rem;
+      color: #1e293b;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 0.3rem;
     }
 
-    .project-details p {
-      margin-bottom: 0.3rem;
+    .project-details p, .project-details ul {
       font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
 
-    /* Main Notebook */
+    .project-details ul {
+      padding-left: 1.2rem;
+    }
+
+    /* Notebook Section */
     main {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
 
     .notebook-container {
@@ -79,7 +91,12 @@
       background-color: #fff;
       padding: 1rem;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .notebook-container:hover {
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
     }
 
     iframe {
@@ -92,16 +109,19 @@
     /* Footer */
     footer {
       background-color: #111827;
-      color: #f9fafb;
+      color: #f4f4f5;
       text-align: center;
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
       font-size: 0.9rem;
     }
 
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
       header h1 {
         font-size: 1.5rem;
+      }
+      header p {
+        font-size: 1rem;
       }
       .project-details h2 {
         font-size: 1.3rem;
@@ -109,7 +129,10 @@
       iframe {
         height: 70vh;
       }
-      main {
+    }
+
+    @media (max-width: 480px) {
+      .project-details {
         padding: 1rem;
       }
     }
