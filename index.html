@@ -1,71 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Air Quality & Behavioral Health Visualization Project</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f6f8;
-      color: #111827;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Quality & Behavioral Health Visualization Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f8;
+    color: #111827;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    margin-top: 0.3rem;
+    color: #dbeafe;
+  }
+
+  .page-section {
+    background-color: #fff;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    line-height: 1.65;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .page-section h2 {
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: .3rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .page-section h3 {
+    margin-top: 1.6rem;
+    margin-bottom: .8rem;
+    font-size: 1.25rem;
+    color: #1e293b;
+  }
+
+  .page-section h4 {
+    margin-top: 1.2rem;
+    margin-bottom: .5rem;
+    font-size: 1.15rem;
+    color: #1f2937;
+  }
+
+  .page-section p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .notebook-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+  }
+
+  iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  footer {
+    background-color: #111827;
+    color: #f4f4f5;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Ensure content fits on mobile */
+  @media(max-width: 768px) {
+    .page-section {
+      padding: 1.5rem;
+      margin: 1rem;
     }
-    header {
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    header h1 { font-size: 2rem; font-weight: 700; }
-    header p { font-size: 1.1rem; margin-top: 0.3rem; color: #dbeafe; }
-    .project-details, .article-section {
-      background-color: #fff;
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .project-details h2, .article-section h2 {
-      border-bottom: 2px solid #3b82f6;
-      padding-bottom: .3rem;
-      margin-bottom: 1rem;
-    }
-    .article-section p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    .article-section h3 {
-      margin-top: 1.5rem;
-      margin-bottom: .8rem;
-      color: #1e293b;
-    }
-    main {
-      flex: 1; display: flex; justify-content: center;
-      align-items: flex-start; padding: 2rem 1rem;
-    }
-    .notebook-container {
-      width: 100%; max-width: 1200px;
-      background-color: #fff; padding: 1rem;
-      border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.15);
-    }
-    iframe {
-      width: 100%; height: 80vh;
-      border: none; border-radius: 8px;
-    }
-    footer {
-      background-color: #111827; color: #f4f4f5;
-      text-align: center; padding: 1rem; font-size: 0.9rem;
-    }
-    @media(max-width:768px){ iframe{height:70vh;} }
-  </style>
+  }
+</style>
 </head>
+
 <body>
 
 <header>
@@ -73,13 +130,12 @@
   <p>Interactive Observable Notebook Presentation</p>
 </header>
 
-<section class="project-details">
+<section class="page-section">
   <h2>Course & Semester</h2>
-  <p>Course: CS-GY 6313 Information Visualization, Section B</p>
-  <p>Semester: Fall 2025</p>
+  <p><strong>Course:</strong> CS-GY 6313 Information Visualization, Section B</p>
+  <p><strong>Semester:</strong> Fall 2025</p>
 
   <h2>Team</h2>
-  <p>Team Name: Team Visualizers</p>
   <ul>
     <li>Vinay Kumar (vk2771)</li>
     <li>Antar Espadas Rodríguez (ae3144)</li>
@@ -87,46 +143,72 @@
   </ul>
 </section>
 
-<section class="article-section">
-  <h2>Air Quality and Obesity in the U.S.: A Decade of Diverging Trends</h2>
-  <p>Over the past decade, two major public health concerns—air pollution and obesity—have shown persistent and troubling trends across the United States. While environmental regulations have led to measurable improvements in air quality, obesity rates have continued to rise, particularly in the South and Midwest. This report explores the geographic and temporal patterns of these two issues, focusing on New York as a case study, and investigates whether there is a meaningful relationship between air pollution (PM2.5 levels) and physical activity or obesity rates.</p>
+<section class="page-section">
+  <h2>Air Quality and Obesity in the U.S.: A Decade of Trends</h2>
 
-  <p>Through visualizations and data analysis, we examine whether cleaner air correlates with healthier behaviors and outcomes, and identify regions where both pollution and obesity are prevalent. Our findings suggest that while air quality improvements are real, they do not automatically translate into reduced obesity or increased physical activity—highlighting the need for integrated public health strategies.</p>
+  <p>
+    Over the past decade, two major public health concerns—air pollution and obesity—have demonstrated 
+    persistent and diverging patterns across the United States. While stricter environmental regulations 
+    have driven measurable improvements in air quality, obesity rates continue to rise, particularly across 
+    the South and Midwest.
+  </p>
+
+  <p>
+    This study visualizes geographic and temporal patterns in both air pollution and health metrics, with 
+    a focus on New York as a case study. We explore whether cleaner air correlates with increased physical 
+    activity or reduced obesity rates, and identify regions experiencing both high pollution and high obesity levels.
+  </p>
 
   <h3>Data Description</h3>
   <p><strong>Sources:</strong> EPA Air Quality System, CDC BRFSS, NYC Open Data, U.S. Census Bureau</p>
-  <p><strong>Attributes:</strong> Year (2011–2023), PM2.5 Concentration, Obesity Rate, Physical Activity Rate, State/Borough/Region</p>
+  <p><strong>Attributes:</strong> Year (2011–2023), PM2.5 Levels, Obesity Rate, Physical Activity Rate, Region/State</p>
 
   <h3>Research Questions & Findings</h3>
 
   <h4>1. Geographic Patterns of Obesity and Activity</h4>
-  <p>Southern and Midwestern states consistently show the highest obesity rates...</p>
+  <p>
+    Southern and Midwestern states consistently demonstrate the highest obesity rates—exceeding 35% by 2022. 
+    Meanwhile, Western and Northeastern states show comparatively healthier trends. These disparities often 
+    reflect systemic differences in built environment, socioeconomic conditions, and public health investment.
+  </p>
 
   <h4>2. Air Quality Trends Over Time</h4>
-  <p>National PM2.5 levels declined between 2011 and 2016...</p>
+  <p>
+    Between 2011 and 2016, national PM2.5 levels declined significantly due to emissions regulations. Progress 
+    plateaued in later years, driven partly by increasing wildfire events. New York City improved from ~9 µg/m³ 
+    to ~7 µg/m³ across this period.
+  </p>
 
   <h4>3. Correlation Between Air Quality and Physical Activity</h4>
-  <p>In areas such as Flushing and Whitestone (CD7), a perfect negative correlation...</p>
+  <p>
+    Certain areas, such as Flushing and Whitestone (CD7), show a strong negative correlation between PM2.5 levels 
+    and physical activity, indicating that pollution spikes may discourage outdoor exercise.
+  </p>
 
-  <h4>4. Temporal Overlaps in Air Quality and Obesity Change</h4>
-  <p>Air quality improvements did not produce proportional changes...</p>
+  <h4>4. Temporal Overlap of Air Quality and Obesity</h4>
+  <p>
+    Improvements in air quality do not appear to directly translate into reductions in obesity. Pollution affects 
+    short-term behavior (activity levels) more than long-term body weight outcomes.
+  </p>
 
-  <h4>5. Spatial Clustering of Dual-Burden Regions</h4>
-  <p>States like Louisiana and Mississippi face both high pollution and high obesity...</p>
-
-  <h4>6. Side-by-Side Trends of Air Quality and Health</h4>
-  <p>Even as PM2.5 levels improve nationally, obesity continues its upward trajectory...</p>
+  <h4>5. Dual-Burden Regions</h4>
+  <p>
+    States like Louisiana and Mississippi face both high pollution and high obesity burdens, making them ideal targets 
+    for integrated environmental and public health interventions.
+  </p>
 
   <h3>Conclusion</h3>
-  <p>Air quality has improved, but obesity trends show little response...</p>
+  <p>
+    Air quality has improved over the last decade, but obesity continues to rise. While pollution reduces physical 
+    activity in the short term, obesity—a long-term, multifactorial condition—does not respond immediately. The 
+    findings emphasize the need for policies that simultaneously address environmental factors and lifestyle/behavioral health.
+  </p>
 </section>
 
 <main>
   <div class="notebook-container">
-    <!-- UPDATED OBSERVABLE NOTEBOOK LINK -->
-    <iframe width="100%" height="500" frameborder="0"
-      src="https://observablehq.com/embed/0b7e590ad0d2868d?cell=*">
-    </iframe>
+    <!-- NEW NOTEBOOK LINK INSTALLED -->
+    <iframe src="https://observablehq.com/embed/0b7e590ad0d2868d?cell=*"></iframe>
   </div>
 </main>
 
