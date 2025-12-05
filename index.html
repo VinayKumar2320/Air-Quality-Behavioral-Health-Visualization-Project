@@ -32,20 +32,42 @@
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
-    .project-details h2, .article-section h2 { border-bottom: 2px solid #3b82f6; padding-bottom: .3rem; margin-bottom: 1rem; }
-    .article-section p { margin-bottom: 1rem; line-height: 1.6; }
-    .article-section h3 { margin-top: 1.5rem; margin-bottom: .8rem; color: #1e293b; }
-    main { flex: 1; display: flex; justify-content: center; align-items: flex-start; padding: 2rem 1rem; }
-    .notebook-container {
-      width: 100%; max-width: 1200px; background-color: #fff;
-      padding: 1rem; border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    .project-details h2, .article-section h2 {
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: .3rem;
+      margin-bottom: 1rem;
     }
-    iframe { width: 100%; height: 80vh; border: none; border-radius: 8px; }
-    footer { background-color: #111827; color: #f4f4f5; text-align: center; padding: 1rem; font-size: 0.9rem; }
+    .article-section p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .article-section h3 {
+      margin-top: 1.5rem;
+      margin-bottom: .8rem;
+      color: #1e293b;
+    }
+    main {
+      flex: 1; display: flex; justify-content: center;
+      align-items: flex-start; padding: 2rem 1rem;
+    }
+    .notebook-container {
+      width: 100%; max-width: 1200px;
+      background-color: #fff; padding: 1rem;
+      border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    }
+    iframe {
+      width: 100%; height: 80vh;
+      border: none; border-radius: 8px;
+    }
+    footer {
+      background-color: #111827; color: #f4f4f5;
+      text-align: center; padding: 1rem; font-size: 0.9rem;
+    }
     @media(max-width:768px){ iframe{height:70vh;} }
   </style>
 </head>
 <body>
+
 <header>
   <h1>Air Quality & Behavioral Health Visualization Project</h1>
   <p>Interactive Observable Notebook Presentation</p>
@@ -55,6 +77,7 @@
   <h2>Course & Semester</h2>
   <p>Course: CS-GY 6313 Information Visualization, Section B</p>
   <p>Semester: Fall 2025</p>
+
   <h2>Team</h2>
   <p>Team Name: Team Visualizers</p>
   <ul>
@@ -66,17 +89,50 @@
 
 <section class="article-section">
   <h2>Air Quality and Obesity in the U.S.: A Decade of Diverging Trends</h2>
-  <p>Over the past decade, two major public health concerns—air pollution and obesity—have shown persistent and troubling trends across the United States. While environmental regulations have led to measurable improvements in air quality, obesity rates have continued to rise, particularly in the South and Midwest...</p>
-  <!-- (text unchanged) -->
+  <p>Over the past decade, two major public health concerns—air pollution and obesity—have shown persistent and troubling trends across the United States. While environmental regulations have led to measurable improvements in air quality, obesity rates have continued to rise, particularly in the South and Midwest. This report explores the geographic and temporal patterns of these two issues, focusing on New York as a case study, and investigates whether there is a meaningful relationship between air pollution (PM2.5 levels) and physical activity or obesity rates.</p>
+
+  <p>Through visualizations and data analysis, we examine whether cleaner air correlates with healthier behaviors and outcomes, and identify regions where both pollution and obesity are prevalent. Our findings suggest that while air quality improvements are real, they do not automatically translate into reduced obesity or increased physical activity—highlighting the need for integrated public health strategies.</p>
+
+  <h3>Data Description</h3>
+  <p><strong>Sources:</strong> EPA Air Quality System, CDC BRFSS, NYC Open Data, U.S. Census Bureau</p>
+  <p><strong>Attributes:</strong> Year (2011–2023), PM2.5 Concentration, Obesity Rate, Physical Activity Rate, State/Borough/Region</p>
+
+  <h3>Research Questions & Findings</h3>
+
+  <h4>1. Geographic Patterns of Obesity and Activity</h4>
+  <p>Southern and Midwestern states consistently show the highest obesity rates...</p>
+
+  <h4>2. Air Quality Trends Over Time</h4>
+  <p>National PM2.5 levels declined between 2011 and 2016...</p>
+
+  <h4>3. Correlation Between Air Quality and Physical Activity</h4>
+  <p>In areas such as Flushing and Whitestone (CD7), a perfect negative correlation...</p>
+
+  <h4>4. Temporal Overlaps in Air Quality and Obesity Change</h4>
+  <p>Air quality improvements did not produce proportional changes...</p>
+
+  <h4>5. Spatial Clustering of Dual-Burden Regions</h4>
+  <p>States like Louisiana and Mississippi face both high pollution and high obesity...</p>
+
+  <h4>6. Side-by-Side Trends of Air Quality and Health</h4>
+  <p>Even as PM2.5 levels improve nationally, obesity continues its upward trajectory...</p>
+
+  <h3>Conclusion</h3>
+  <p>Air quality has improved, but obesity trends show little response...</p>
 </section>
 
 <main>
   <div class="notebook-container">
+    <!-- UPDATED OBSERVABLE NOTEBOOK LINK -->
     <iframe width="100%" height="500" frameborder="0"
-      src="https://observablehq.com/embed/0b7e590ad0d2868d?cell=*"></iframe>
+      src="https://observablehq.com/embed/0b7e590ad0d2868d?cell=*">
+    </iframe>
   </div>
 </main>
 
-<footer>&copy; 2025 Team Visualizers | CS-GY 6313 | New York University</footer>
+<footer>
+  &copy; 2025 Team Visualizers | CS-GY 6313 | New York University
+</footer>
+
 </body>
 </html>
